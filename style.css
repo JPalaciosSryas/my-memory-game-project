@@ -72,7 +72,18 @@ body {
     width: 100px;
     height: 140px;
     border-radius: 10px;
-    background-image: url("./assets/pattern.png");
     background-size: cover;
     text-align: center;
+}
+
+.inactive {
+    display: none;
+}
+
+.inactive>.inner-card {
+    background-image: url("./assets/pattern.png");
+}
+
+.active {
+    display: flex;
 }
