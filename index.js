@@ -41,40 +41,60 @@ const randomizeImages = () => {
     oddCards.forEach(card => {
         let removed1 = order1.splice(0, 1).pop();
         card.style.backgroundImage = images[removed1];
+        let newClass1 = removed1.toString();
+        card.parentElement.classList.add(newClass1)
     })
 
     evenCards.forEach(card => {
         let removed2 = order2.splice(0, 1).pop();
         card.style.backgroundImage = images[removed2];
+        let newClass2 = removed2.toString();
+        card.parentElement.classList.add(newClass2)
     })
 }
 
 randomizeImages();
 
+let cardOne;
+let cardTwo;
+
 const flipCard = (e) => {
     let clickedCard = e.target;
-    clickedCard.classList.add("flip");
-    console.log(e.target);
+    if (clickedCard !== cardOne) {
+        clickedCard.classList.add("flip");
+        if (!cardOne) {
+            return cardOne = clickedCard;
+        } 
+        cardTwo = clickedCard
+        
+        let cardOneDiv= cardOne.classList[1];
+        let cardTwoDiv = cardTwo.classList[1];
+        matchCards(cardOneDiv, cardTwoDiv);
+    }
+}
+
+const matchCards = (img1, img2) => {
+    console.log(img1, img2)
+    if (img1 == img2) {
+        return console.log("Same Cards")
+    }
+    console.log("Not matched")
 }
 
 cards.forEach(card => {
     card.addEventListener("click", flipCard)
 })
 
-let flippedCards = document.querySelectorAll('.flip');
 
-let cardOne;
-let cardTwo;
-
-const unflipCard = (e) => {
-    let clickedCard = e.target;
-    clickedCard.classList.remove("flip");
-    cardOne = clickedCard;
-    cardTwo = clickedCard;
-    console.log(cardOne, cardTwo);
-}
+// const unflipCard = (e) => {
+//     let clickedCard = e.target;
+//     clickedCard.classList.remove("flip");
+//     cardOne = clickedCard;
+//     cardTwo = clickedCard;
+//     console.log(cardOne, cardTwo);
+// }
 
 
-flippedCards.forEach(card => { unflipCard
-    card.addEventListener("click", unflipCard)
-})
+// flippedCards.forEach(card => {
+//     card.addEventListener("click", unflipCard)
+// })
