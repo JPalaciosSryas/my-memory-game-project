@@ -6,6 +6,10 @@ let image4 = "url('./assets/dora.jfif')"
 let image5 = "url('./assets/mrclean.jpg')"
 let image6 = "url('./assets/richi-phelps.jfif')"
 
+let cards = document.querySelectorAll('.card');
+console.log(cards);
+
+
 let oddCards = document.querySelectorAll(".odd");
 let evenCards = document.querySelectorAll(".even");
 
@@ -47,6 +51,30 @@ const randomizeImages = () => {
 
 randomizeImages();
 
-let inactiveCards = document.querySelectorAll("inactive");
+const flipCard = (e) => {
+    let clickedCard = e.target;
+    clickedCard.classList.add("flip");
+    console.log(e.target);
+}
 
-let activeCards = document.querySelectorAll("active");
+cards.forEach(card => {
+    card.addEventListener("click", flipCard)
+})
+
+let flippedCards = document.querySelectorAll('.flip');
+
+let cardOne;
+let cardTwo;
+
+const unflipCard = (e) => {
+    let clickedCard = e.target;
+    clickedCard.classList.remove("flip");
+    cardOne = clickedCard;
+    cardTwo = clickedCard;
+    console.log(cardOne, cardTwo);
+}
+
+
+flippedCards.forEach(card => { unflipCard
+    card.addEventListener("click", unflipCard)
+})
