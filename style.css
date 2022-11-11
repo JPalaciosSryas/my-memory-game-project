@@ -34,6 +34,12 @@ body {
     font-size: 2.5rem;
 }
 
+.you-won {
+    width: 600px;
+    height: 400px;
+    background-color: rgb(55, 30, 0);
+    margin: 120px auto 0;
+}
 .cards-background {
     margin: 0 auto;
     height: 534px;
