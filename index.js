@@ -1,10 +1,10 @@
 
-let image1 = "url('./assets/goku-pelon.jfif')"
-let image2 = "url('./assets/auron.jfif')"
-let image3 = "url('./assets/explosion.jpg')"
-let image4 = "url('./assets/dora.jfif')"
-let image5 = "url('./assets/mrclean.jpg')"
-let image6 = "url('./assets/nicolas-maduro.jfif')"
+let image1 = "url('./assets/cr7_balondeoro.jpg')"
+let image2 = "url('./assets/cr7_champions.jpeg')"
+let image3 = "url('./assets/cr7_juventus.jpg')"
+let image4 = "url('./assets/cr7_portugal.jpg')"
+let image5 = "url('./assets/Cristiano_Ronaldo_2018.jpg')"
+let image6 = "url('./assets/cr7.jpg')"
 
 let cards = document.querySelectorAll('.card');
 

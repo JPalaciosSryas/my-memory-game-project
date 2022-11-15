@@ -121,6 +121,11 @@ body {
     transform: rotateY(180deg);
 }
 
+.active-card {
+    background-size: cover;
+    background-position: center;
+}
+
 .card.shake {
     animation: shake 0.35s ease-in-out;
     background-color: #aaa;
